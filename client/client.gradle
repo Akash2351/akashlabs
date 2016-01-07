@@ -1,0 +1,39 @@
+buildscript {
+    dependencies {
+        classpath 'com.moowork.gradle:gradle-node-plugin:0.11'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'com.moowork.node'
+
+node {
+    version = "4.2.0"
+    download = true
+}
+
+jar.dependsOn << 'emberBuild'
+jar {
+    from(fileTree("dist")) {
+        into "META-INF/resources"
+    }
+}
+
+clean{
+    delete "build", "node_modules", "bower_components", "dist", "tmp"
+}
+
+task bowerInstall(type: NodeTask, dependsOn: ["npmInstall"]) {
+    script = file("node_modules/bower/bin/bower")
+    args = ["install"]
+}
+
+//task emberTest(type: NodeTask, dependsOn: ["bowerInstall"]) {
+//    script = file("node_modules/ember-cli/bin/ember")
+//    args = ["test", "--silent"]
+//}
+
+task emberBuild(type: NodeTask, dependsOn: ["bowerInstall"]) {
+    script = file("node_modules/ember-cli/bin/ember")
+    args = ["build", "--environment", "production", "--silent"]
+}
