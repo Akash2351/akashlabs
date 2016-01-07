@@ -1,0 +1,12 @@
+build:
+  version: #version#
+  commit: #commit#
+  changeset: #changeset#
+  date: #built#
+
+server:
+  port: 8090
+  sessionTimeout: 600
+
+logging:
+  file: akashlabs_webserver.log
