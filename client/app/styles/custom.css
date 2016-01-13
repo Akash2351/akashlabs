@@ -531,6 +531,34 @@ h6,.page-content h6 a {font-weight: normal; font-style: normal; font-family: 'So
 
 }
 
+.portfolio-modal-frame {
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    border: 1px solid #333;
+    background: #ddd;
+    height: 50%;
+    width: 50%;
+    z-index: 300;
+}
+.portfolio-modal-title {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height:30px;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+.portfolio-modal-body {
+    margin-top: 40px;
+    padding: 5px;
+    overflow: scroll;
+}
+
+button{
+    border:none;
+    padding:0px;
+}
 
 
 
