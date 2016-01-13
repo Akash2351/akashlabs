@@ -13,12 +13,23 @@ module.exports = function(defaults) {
   // If you need to use different assets in different
   // environments, specify an object as the first parameter. That
   // object's keys should be the environment name and the values
-  // should be the asset to use in that environment.
+  // should be the asset to use in that environment.bootstrap-responsive.min.css
   //
   // If the library that you are including contains AMD or ES6
   // modules that you would like to import into your application
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  app.import('bower_components/bootstrap/dist/css/bootstrap.min.css');
+  app.import('bower_components/bootstrap/dist/css/bootstrap-theme.css');
+  app.import('bower_components/bootstrap/dist/js/bootstrap.js');
+  app.import('bower_components/font-awesome/css/font-awesome.min.css');
+    //app.import('public/resources/default.js');
+
+ // app.import('vendor/default.js');
+ // app.import('vendor/jquery.min.js');
+  /*  app.import('vendor/jquery.js');
+  app.import('vendor/freelancer.js');
+  app.import('vendor/jquery.easing.min.js');*/
   return app.toTree();
 };
